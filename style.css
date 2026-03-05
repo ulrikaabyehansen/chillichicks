@@ -1,0 +1,447 @@
+/*
+Theme Name: GeneratePress Child
+Description: Chili Chicks – custom child theme for GeneratePress
+Author: TalkTech
+Template: generatepress
+Version: 0.1
+Text Domain: generatepress-child
+*/
+
+/* ==================================================
+   0. VARIABLER
+   ================================================== */
+
+:root {
+    --cc-max-width: 1100px;
+    --cc-side-margin: 1.5rem;
+    --cc-box-bg: rgba(255,255,255,0.93);
+    --cc-accent: #8b1d3d;
+    --cc-text: #1f2933;
+}
+
+/* ==================================================
+   1. GLOBAL BAGGRUND
+   ================================================== */
+
+html,
+body {
+    min-height: 100%;
+    background-image: url('http://chillichicks.dk/wp-content/uploads/2025/12/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+/* ==================================================
+   GLOBAL FOCUS / ACCESSIBILITY (GeneratePress)
+   ================================================== */
+
+:where(a, button, input, select, textarea):focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 29, 61, 0.35);
+    border-radius: inherit;
+}
+
+/* ==================================================
+   2. NEUTRALISÉR GENERATEPRESS BAGGRUNDE
+   ================================================== */
+
+.site,
+.site-header,
+.site-main,
+.site-footer,
+.inside-site-info,
+.footer-widgets {
+    background: transparent !important;
+}
+
+/* ==================================================
+   3. HEADER / MENU
+   ================================================== */
+
+.site-header {
+    background: transparent !important;
+}
+
+.main-navigation {
+    display: flex;
+    justify-content: center;
+    background: transparent !important;
+}
+
+.main-navigation .inside-navigation {
+    width: 100%;
+    max-width: var(--cc-max-width);
+    margin: 2rem var(--cc-side-margin) 0;
+    padding: 1rem 2.5rem;
+
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(6px);
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.main-navigation a {
+    font-weight: 600;
+    color: var(--cc-accent);
+}
+
+.main-navigation a:hover,
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a,
+.main-navigation .current_page_item > a {
+    color: var(--cc-accent) !important;
+}
+
+/* ==================================================
+   4. LAYOUT
+   ================================================== */
+
+.site {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-main {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+}
+
+/* ==================================================
+   5. HOVEDBOKS – ALLE SIDER
+   ================================================== */
+
+.cc-content,
+body.page .inside-article,
+body.single .inside-article {
+    width: 100%;
+    max-width: var(--cc-max-width);
+    margin: 4rem var(--cc-side-margin) 6rem;
+    padding: 3.5rem;
+
+    background: var(--cc-box-bg);
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.14);
+}
+
+/* ==================================================
+   6. TYPOGRAFI
+   ================================================== */
+:root {
+    --cc-h1-size: 42px;
+    --cc-h1-line: 1.2;
+    --cc-h1-weight: 400;
+}
+
+
+.cc-content h1,
+.cc-content h2,
+.cc-content h3,
+.cc-content h4,
+.cc-content h5,
+.cc-content h6,
+.inside-article h1,
+.inside-article h2,
+.inside-article h3,
+.inside-article h4,
+.inside-article h5,
+.inside-article h6 {
+    color: var(--cc-accent);
+}
+.cc-content h1,
+.inside-article h1 {
+    font-size: var(--cc-h1-size);
+    line-height: var(--cc-h1-line);
+    font-weight: var(--cc-h1-weight);
+}
+
+
+
+.cc-content p,
+.inside-article p {
+    color: var(--cc-text);
+    line-height: 1.65;
+}
+
+.cc-content a,
+.inside-article a {
+    color: var(--cc-accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cc-content a:hover,
+.inside-article a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ==================================================
+   7. TABELLER
+   ================================================== */
+
+.cc-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.node-meta-table thead,
+.node-audio-table thead {
+    display: table-header-group;
+}
+
+.node-meta-table thead th,
+.node-audio-table thead th {
+    background: rgba(139,29,61,0.045);
+    color: var(--cc-accent);
+    border-bottom: 1px solid rgba(139,29,61,0.2);
+	padding-bottom: 0.6rem;
+}
+
+body.post-type-archive-node table tbody tr:nth-child(odd),
+body.single-node table tbody tr:nth-child(odd) {
+    background-color: rgba(139,29,61,0.045);
+}
+
+body.post-type-archive-node table tbody tr:nth-child(even),
+body.single-node table tbody tr:nth-child(even) {
+    background-color: rgba(0,140,160,0.035);
+}
+
+/* ==================================================
+   8. NODEARKIV – SØG
+   ================================================== */
+
+.node-search {
+    margin-bottom: 1.5rem;
+}
+
+.node-search input[type="search"] {
+    width: min(420px, 100%);
+    padding: 0.65rem 0.9rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.7);
+}
+
+/* ==================================================
+   9. NODEARKIV – IKONER (FIXET)
+   ================================================== */
+
+.node-table td:nth-child(5) {
+    white-space: nowrap;
+}
+
+.node-table td:nth-child(5) a {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.75rem;
+}
+
+.node-table td:nth-child(5) a:last-child {
+    margin-right: 0;
+}
+
+.node-table td:nth-child(5) i {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.node-table .fa-headphones,
+.node-table .fa-music,
+.node-single .node-sibelius-link i {
+    color: var(--cc-accent);
+}
+
+.node-table .fa-youtube {
+    color: #b91c1c;
+}
+
+/* ==================================================
+   10. SÆTLISTER
+   ================================================== */
+
+.setliste-oversigt-item {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 2.25rem;
+
+    background: rgba(255,255,255,0.55);
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+}
+
+.setliste-oversigt-item:first-of-type {
+    margin-top: 2rem;
+}
+
+.setliste-oversigt-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+/* DATO BADGE – FARVER FIXET */
+
+.setliste-oversigt-item .setliste-dato {
+    position: absolute;
+    top: -24px;
+    right: 1.5rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    padding: 0.75rem 1.4rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    background: var(--cc-accent);
+    color: #ffffff;
+
+    border-radius: 15px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+}
+
+.setliste-oversigt-item .setliste-dato *,
+.setliste-oversigt-item .setliste-dato i {
+    color: #ffffff !important;
+}
+
+/* ==================================================
+   11. MOBIL
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .cc-content,
+    body.page .inside-article,
+    body.single .inside-article {
+        padding: 1.75rem 1.5rem;
+        margin: 2rem 1rem 3rem;
+    }
+
+    .main-navigation ul.menu {
+        display: none;
+    }
+
+    .main-navigation .menu-toggle {
+        display: flex;
+    }
+
+    .main-navigation .inside-navigation {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .setliste-oversigt-item .setliste-dato {
+        position: static;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.6rem;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+}
+@media (max-width: 768px) {
+  body.post-type-archive-node .inside-article {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+}
+
+
+/* ==================================================
+   FOOTER – Tving transparent baggrund
+   ================================================== */
+
+.site-footer,
+.site-footer .site-info,
+.site-footer .inside-site-info,
+.site-footer .footer-widgets,
+.site-footer .inside-footer-widgets {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.site-footer,
+.site-footer a {
+    color: rgba(255,255,255,0.9);
+}
+
+/* ==================================================
+   12. EVENTS / KALENDER (The Events Calendar)
+   KUN hvid baggrund + list view event-cards
+   + korrekt single-event wrapper
+   ================================================== */
+
+/* =========================
+   EVENTS ARCHIVE (/events)
+   ========================= */
+
+/* Ydre container – matcher sitets hovedbokse */
+body.post-type-archive-tribe_events .tribe-events {
+    max-width: var(--cc-max-width);
+    margin: 4rem auto 6rem;
+    padding: 3.5rem;
+
+    background: var(--cc-box-bg);
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.14);
+}
+
+/* Fjern TECs indre max-width uden at ændre spacing */
+body.post-type-archive-tribe_events .tribe-common-l-container {
+    max-width: none;
+    padding: 0;
+}
+
+/* LIST VIEW – Event cards */
+body.post-type-archive-tribe_events
+.tribe-events-view--list
+.tribe-events-calendar-list__event-row {
+    padding: 2rem 2.25rem;
+
+    background: rgba(255,255,255,0.55);
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+}
+
+/* Diskret hover – ingen layout-shift */
+body.post-type-archive-tribe_events
+.tribe-events-view--list
+.tribe-events-calendar-list__event-row:hover {
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+
+/* =========================
+   SINGLE EVENT
+   ========================= */
+
+/* KORREKT stor wrapper for single event */
+body.single-tribe_events #tribe-events-pg-template {
+    max-width: var(--cc-max-width);
+    margin: 4rem auto 6rem;
+    padding: 3.5rem;
+
+    background: var(--cc-box-bg);
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.14);
+}
+
+/* Neutralisér indre TEC-containere (undgå hvide “øer”) */
+body.single-tribe_events #tribe-events-pg-template .tribe-common-l-container,
+body.single-tribe_events #tribe-events-pg-template .tribe-events {
+    max-width: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
